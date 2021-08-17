@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# 💳 Business Card Maker 
+사용자가 정해진 양식을 통해 이미지와 정보들을 입력하면 정해진 명함 디자인으로 디자인을 변경해줍니다.
+해당 프로젝트를 진행하면서 얻어가려는 것들은 아래와 같습니다. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
 
-## Available Scripts
+## 📝 프로젝트를 통해 이 친구들을 배웁니다
+- `React Hooks`
+- `PostCSS`
+- `React Router` : React Routing 을 도와주는 라이브러리
+- `Firebase` : Authentication, realtime Database
+- `Cloudinary` : 사용자의 이미지를 서버에 업로드 가능
 
-In the project directory, you can run:
+---
+<br />
 
-### `yarn start`
+## 🕸 **Routing?** in web
+- ### a mechanism where HTTP requests gets link to specific web pages/resources.
+- ### Router determines which pages should be open when a user visits a certain path.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🔥 **Firebase**
+- ### Authentication with secure (OAuth)
+- ### Firestore, Storage, Realtime DB
+- ### Crashlytics : App이 죽었을 때 error log 등을 편하게 볼 수 있도록 도와줍니다. 
 
-### `yarn test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ☁️ **Cloudinary**
+- ### Firebase 의 Storage를 써도 되지만 이는 사용자의 원파일을 그대로 저장하는 반면, Cloudinary는 사용자가 업로드한 이미지를 우리가 원하는대로 사이즈를 재조정하거나 이미지와 미디어에 관련된 더 다양한 기능들을 활용할 수 있습니다. 
 
-### `yarn build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 🍎 Things I learned
+- `cp -R template card-maker` : tmp 파일을 활용하여 초기 react project 생성
+- `@value key: value` : PostCSS를 활용해 common폴더 내 `color`, `size` 파일로 전역변수를 설정하여 프로젝트에서 쓰이는 CSS 값들을 변수처럼 활용 
