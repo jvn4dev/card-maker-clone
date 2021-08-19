@@ -43,4 +43,4 @@
 - `cp -R template card-maker` : tmp 파일을 활용하여 초기 react project 생성
 - `@value key: value` : PostCSS를 활용해 common폴더 내 `color`, `size` 파일로 전역변수를 설정하여 프로젝트에서 쓰이는 CSS 값들을 변수처럼 활용
 - dependency injection 을 통한 firebase authentication 적용
-- 중간에 git이 한번 꼬이는 바람에 `git reset`에 대해 스터디하고 `git reset --hard HEAD~1` 명령어로 이전 commit 내용으로 돌아감~~진땀 흘렸다..ㅠ~~(강의내용 x)
+- 중간에 git이 한번 꼬이는 바람에 `git reset`에 대해 스터디하고 `git reset --hard HEAD~1` 명령어로 이전 commit 내용으로 돌아감. ~~진땀 흘렸다..ㅠ~~(강의내용 x)
