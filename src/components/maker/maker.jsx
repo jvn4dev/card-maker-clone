@@ -26,7 +26,7 @@ const Maker = ({ authService }) => {
       name: 'Kwon',
       company: 'LH',
       title: 'daeri',
-      email: 'jvn4develop@gmail.com',
+      email: 'decyj@lh.or.kr',
       message: "Don't be a code Monkey",
       theme: 'light',
       fileName: 'chung.png',
