@@ -1,0 +1,44 @@
+@value makerBlack, makerWhite from '../../common/color.module.css';
+
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 1px solid makerBlack;
+  border-left: 1px solid makerBlack;
+  margin-bottom: 1em;
+}
+
+.text,
+.theme,
+.imageInput,
+.textarea {
+  border: none;
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  border-bottom: 1px solid makerBlack;
+  border-right: 1px solid makerBlack;
+  background-color: makerWhite;
+}
+
+.imageInput {
+  padding: 0;
+  flex: 1 1 50%;
+}
+
+.text,
+.theme {
+  flex: 1 1 30%;
+}
+
+.text:focus,
+.theme:focus,
+.textarea:focus,
+.button:focus {
+  outline: 0;
+}
+
+.textarea {
+  flex-basis: 100%;
+}

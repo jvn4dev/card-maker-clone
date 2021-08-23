@@ -7,7 +7,7 @@ const Editor = ({ cards }) => (
     <h1 className={styles.title}>Card Maker</h1>
     <ul className={styles.editFormList}>
       {cards.map((card) => {
-        return <EditForm />;
+        return <EditForm key={card.id} card={card} />;
       })}
     </ul>
   </section>
