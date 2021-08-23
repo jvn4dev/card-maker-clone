@@ -12,6 +12,7 @@
 .text,
 .theme,
 .imageInput,
+.delButton,
 .textarea {
   border: none;
   width: 100%;
@@ -22,6 +23,7 @@
   background-color: makerWhite;
 }
 
+.delButton,
 .imageInput {
   padding: 0;
   flex: 1 1 50%;

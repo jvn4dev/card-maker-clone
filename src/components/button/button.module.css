@@ -2,12 +2,14 @@
 
 .button {
   background-color: makerGreen;
+  width: 100%;
   font-weight: bold;
   font-size: 0.8rem;
   color: makerWhite;
   flex: 1 1 50%;
   padding: 0.5em;
   cursor: pointer;
+  border: none;
 }
 
 .button:hover {
