@@ -12,7 +12,7 @@
 .text,
 .theme,
 .imageInput,
-.delButton,
+.addButton,
 .textarea {
   border: none;
   width: 100%;
@@ -23,7 +23,7 @@
   background-color: makerWhite;
 }
 
-.delButton,
+.addButton,
 .imageInput {
   padding: 0;
   flex: 1 1 50%;
@@ -37,7 +37,7 @@
 .text:focus,
 .theme:focus,
 .textarea:focus,
-.button:focus {
+.addButton:focus {
   outline: 0;
 }
 
