@@ -6,9 +6,13 @@ const Preview = ({ cards }) => (
   <section className={styles.preview}>
     <h1 className={styles.title}>Card Preview</h1>
     <ul className={styles.cards}>
-      {cards.map((card) => {
-        return <Card key={card.id} card={card} />;
-      })}
+      {Object.keys(cards).length === 0 ? (
+        <h1 className={styles.noCards}>Please fill the form 📇</h1>
+      ) : (
+        Object.keys(cards).map((key) => {
+          return <Card key={key} card={cards[key]} />;
+        })
+      )}
     </ul>
   </section>
 );

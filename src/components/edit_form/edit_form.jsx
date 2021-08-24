@@ -1,35 +1,88 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '../button/button';
 import ImageInput from '../image_input/image_input';
 import styles from './edit_form.module.css';
 
-const EditForm = ({ card }) => {
+const EditForm = ({ card, updateCard, deleteCard }) => {
   const { name, company, title, email, message, theme, fileName, fileURL } =
     card;
 
-  const onSubmit = () => {};
+  const nameRef = useRef();
+  const companyRef = useRef();
+  const themeRef = useRef();
+  const titleRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
+  const onChange = (event) => {
+    if (event.currentTarget == null) {
+      return;
+    }
+
+    event.preventDefault();
+
+    updateCard({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
+
+  const onSubmit = (event) => {
+    deleteCard(card);
+  };
 
   return (
     <form className={styles.form}>
-      <input className={styles.text} type="text" name="name" value={name} />
       <input
+        ref={nameRef}
+        className={styles.text}
+        type="text"
+        name="name"
+        value={name}
+        onChange={onChange}
+      />
+      <input
+        ref={companyRef}
         className={styles.text}
         type="text"
         name="company"
         value={company}
+        onChange={onChange}
       />
-      <select className={styles.theme} name="theme" value={theme}>
+      <select
+        ref={themeRef}
+        className={styles.theme}
+        name="theme"
+        value={theme}
+        onChange={onChange}
+      >
         <option value="dark">Dark</option>
         <option value="light">Light</option>
         <option value="colorful">Colorful</option>
       </select>
-      <input className={styles.text} type="text" name="title" value={title} />
-      <input className={styles.text} type="text" name="email" value={email} />
+      <input
+        ref={titleRef}
+        className={styles.text}
+        type="text"
+        name="title"
+        value={title}
+        onChange={onChange}
+      />
+      <input
+        ref={emailRef}
+        className={styles.text}
+        type="text"
+        name="email"
+        value={email}
+        onChange={onChange}
+      />
       <textarea
+        ref={messageRef}
         className={styles.textarea}
         name="message"
         value={message}
         placeholder="put your message here"
+        onChange={onChange}
       ></textarea>
       <div className={styles.imageInput}>
         <ImageInput name="Upload" onClick={onSubmit} />

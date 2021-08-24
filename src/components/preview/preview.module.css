@@ -1,4 +1,4 @@
-@value makerGreen, makerWhite from '../../common/color.module.css';
+@value makerGreen, makerWhite, makerPink from '../../common/color.module.css';
 
 .preview {
   flex-basis: 50%;
@@ -19,4 +19,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.noCards {
+  text-align: center;
+  color: makerGreen;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-bottom: 1px solid makerPink;
 }

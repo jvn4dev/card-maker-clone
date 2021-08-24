@@ -9,8 +9,8 @@ import styles from './maker.module.css';
 const Maker = ({ authService }) => {
   const history = useHistory();
 
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    1: {
       id: 1,
       name: 'Chung',
       company: 'Zepeto',
@@ -21,7 +21,7 @@ const Maker = ({ authService }) => {
       fileName: 'chung.png',
       fileURL: './images/default_logo.png',
     },
-    {
+    2: {
       id: 2,
       name: 'Kwon',
       company: 'LH',
@@ -32,7 +32,7 @@ const Maker = ({ authService }) => {
       fileName: 'chung.png',
       fileURL: './images/default_logo.png',
     },
-    {
+    3: {
       id: 3,
       name: 'MR.NOBODY',
       company: 'Zepeto',
@@ -43,7 +43,7 @@ const Maker = ({ authService }) => {
       fileName: 'chung.png',
       fileURL: './images/default_logo.png',
     },
-  ]);
+  });
 
   const onLogout = () => {
     authService.logout();
@@ -57,16 +57,32 @@ const Maker = ({ authService }) => {
     });
   });
 
-  const addForm = (card) => {
-    const newCards = [...cards, card];
-    setCards(newCards);
+  const createOrUpdateCard = (card) => {
+    setCards((cards) => {
+      const newCards = { ...cards };
+      newCards[card.id] = card;
+      return newCards;
+    });
+  };
+
+  const deleteCard = (card) => {
+    setCards((cards) => {
+      const newCards = { ...cards };
+      delete newCards[card.id];
+      return newCards;
+    });
   };
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor cards={cards} onAdd={addForm} />
+        <Editor
+          cards={cards}
+          onAdd={createOrUpdateCard}
+          updateCard={createOrUpdateCard}
+          deleteCard={deleteCard}
+        />
         <Preview cards={cards} />
       </div>
       <Footer />
