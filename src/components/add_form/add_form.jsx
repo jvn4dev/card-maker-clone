@@ -1,11 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from '../button/button';
-import ImageInput from '../image_input/image_input';
 import styles from './add_form.module.css';
 
-const AddForm = ({ onAdd }) => {
-  const onSubmit = () => {};
-
+const AddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -13,10 +10,17 @@ const AddForm = ({ onAdd }) => {
   const titleRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+  const [file, setFile] = useState({ fileName: null, fileURL: null });
+
+  const onFileChange = (file) => {
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
 
   const handleAddClick = (event) => {
     event.preventDefault();
-
     const newCard = {
       id: Date.now(),
       name: nameRef.current.value || '',
@@ -25,12 +29,13 @@ const AddForm = ({ onAdd }) => {
       email: emailRef.current.value || '',
       message: messageRef.current.value || '',
       theme: themeRef.current.value,
-      fileName: '',
-      fileURL: '',
+      fileName: file.fileName || '',
+      fileURL: file.fileURL || '',
     };
 
     onAdd(newCard);
     formRef.current.reset();
+    setFile({ fileName: null, fileURL: null });
   };
 
   return (
@@ -80,7 +85,7 @@ const AddForm = ({ onAdd }) => {
         placeholder="put your message here"
       ></textarea>
       <div className={styles.imageInput}>
-        <ImageInput name="Upload" onClick={onSubmit} />
+        <FileInput name={file.fileName} onFileChange={onFileChange} />
       </div>
       <div className={styles.addButton}>
         <Button name="Add" onClick={handleAddClick} />
