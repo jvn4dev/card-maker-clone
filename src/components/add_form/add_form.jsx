@@ -32,8 +32,16 @@ const AddForm = ({ FileInput, onAdd }) => {
       fileName: file.fileName || '',
       fileURL: file.fileURL || '',
     };
+    if (
+      nameRef.current.value ||
+      companyRef.current.value ||
+      titleRef.current.value ||
+      emailRef.current.value ||
+      messageRef.current.value
+    ) {
+      onAdd(newCard);
+    }
 
-    onAdd(newCard);
     formRef.current.reset();
     setFile({ fileName: null, fileURL: null });
   };
