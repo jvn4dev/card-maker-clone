@@ -3,6 +3,10 @@
 사용자가 정해진 양식을 통해 이미지와 정보들을 입력하면 정해진 명함 디자인으로 디자인을 변경해줍니다.
 해당 프로젝트를 진행하면서 얻어가려는 것들은 아래와 같습니다.
 
+## Netlify 배포
+
+https://jvn4dev-cardmaker.netlify.app/
+
 <br />
 
 ## 📝 프로젝트를 통해 이 친구들을 배웁니다
@@ -52,4 +56,4 @@
   2. `Realtime Database`로 생성한 명함 내 데이터를 로그인된 UserId 경로에 저장 - 명함 데이터 업로드 중 `Firebase Realtime Database permission denied`라는 에러와 함께 데이터가 저장되지 않는 문제가 발생했고, 해당 Realtime DB 콘솔 내 규칙을 바꿔줌으로써 문제 해결
 
 - `memo`, `useCallback` : 수정되고 있는 컴포넌트 외의 다른 컴포넌트들이 함께 리렌더링되는 부분을 방지 및 최적화 - `useCallback` 사용 시 주의사항
-- `github page`를 통한 웹 배포 - 추후 `Netlify`로 배포를 연습해볼 예정
+- `Netlify` 를 통한 배포 - 배포 후 Firebase Authentication 내 승인된 도메인에 `Netlify deploy --prod` 로 생성된 URL을 추가하여 구글OAuth 로그인 문제 해결
