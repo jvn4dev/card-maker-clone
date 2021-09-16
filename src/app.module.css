@@ -1,4 +1,4 @@
-@value makerGrey from './common/color.module.css';
+@value makerGrey, makerWhite from './common/color.module.css';
 
 * {
   box-sizing: border-box;

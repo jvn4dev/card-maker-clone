@@ -32,6 +32,8 @@ const AddForm = ({ FileInput, onAdd }) => {
       fileName: file.fileName || '',
       fileURL: file.fileURL || '',
     };
+
+    // 입력폼중 하나라도 입력해야 add가 눌리도록 그렇지 않으면 양식을 채우라는 alert
     if (
       nameRef.current.value ||
       companyRef.current.value ||
@@ -40,6 +42,8 @@ const AddForm = ({ FileInput, onAdd }) => {
       messageRef.current.value
     ) {
       onAdd(newCard);
+    } else {
+      alert('양식을 채워주세요!');
     }
 
     formRef.current.reset();
