@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import Button from '../button/button';
 import styles from './edit_form.module.css';
 
-const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
+const EditForm = memo(({ FileInput, card, updateCard, deleteCard }) => {
   const { name, company, title, email, message, theme, fileName } = card;
 
   const nameRef = useRef();
@@ -96,6 +96,6 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       </div>
     </form>
   );
-};
+});
 
 export default EditForm;

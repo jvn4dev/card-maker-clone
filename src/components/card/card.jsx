@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './card.module.css';
 
-const Card = ({ card }) => {
+const Card = memo(({ card }) => {
   const { name, company, title, email, message, theme, fileURL } = card;
   return (
     <li className={`${styles.card} ${getTheme(theme)}`}>
@@ -15,7 +15,7 @@ const Card = ({ card }) => {
       </div>
     </li>
   );
-};
+});
 
 function getTheme(theme) {
   switch (theme) {
