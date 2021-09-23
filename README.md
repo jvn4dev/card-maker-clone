@@ -57,3 +57,7 @@ https://jvn4dev-cardmaker.netlify.app/
 
 - `memo`, `useCallback` : 수정되고 있는 컴포넌트 외의 다른 컴포넌트들이 함께 리렌더링되는 부분을 방지 및 최적화 - `useCallback` 사용 시 주의사항
 - `Netlify` 를 통한 배포 - 배포 후 Firebase Authentication 내 승인된 도메인에 `Netlify deploy --prod` 로 생성된 URL을 추가하여 구글OAuth 로그인 문제 해결
+
+## 💦 추가 메모사항
+
+- 여러 컴포넌트들간에 props를 내려주고 상태를 변경시키는 과정에서 처음으로 `Redux`를 왜 쓰는지 알 것 같았다. 너무 헷갈리고 상태를 왜 전역 `Store`에서 관리하려는지 이해했다. 이후에 `Redux`를 공부해서 프로젝트에 추가해보고 싶다.
